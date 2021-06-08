@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://https://egassociation.org/ega-knp-v1-schema.json",
+  "title": "KNP",
+  "description": "Key Names and Phrases (TBC) aka glossaries, term list or bible",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique identifier for a given term",
+        "type": "string"
+      },
+      "category": {
+        "description": "Category of the source term to define",
+        "type": "string",
+        "enum": [
+          "PrimaryCharacter",
+          "SecondaryCharacter",
+          "Location",
+          "Phrase",
+          "Person",
+          "Term",
+          "Organization",
+          "Abbreviation",
+          "MainTitle",
+          "EpisodeTitle",
+          "ShowName",
+          "Song"
+        ]
+      },
+      "source": {
+        "description": "Source to translate",
+        "type": "object",
+        "properties": {
+          "lastUpdate": {
+            "description": "Last update timestamp (RFC 3339, section 5.6)",
+            "type": "string",
+            "format": "date-time"
+          },
+          "author": {
+            "description": "Author of the last update",
+            "type": "string"
+          },
+          "locked": {
+            "description": "Source properties should not be updated if locked is true. False is assumed if not defined",
+            "type": "boolean"
+          },
+          "language": {
+            "description": "Source language code (IETF BCP 47). We may use a regular expression to validate it, see https://schneegans.de/lv/",
+            "type": "string"
+          },
+          "text": {
+            "description": "Source text to translate",
+            "type": "string"
+          },
+          "alternates": {
+            "description": "Source text alternatives",
+            "type": "string"
+          },
+          "partOfSpeech": {
+            "description": "Part of speech",
+            "type": "string",
+            "enum": [
+              "Noun",
+              "ProperNoun",
+              "Pronoun",
+              "Verb",
+              "Adjective",
+              "Adverb",
+              "Preposition",
+              "Conjunction",
+              "Interjection"
+            ]
+          },
+          "definition": {
+            "description": "Definition of the source text",
+            "type": "string"
+          },
+          "context": {
+            "description": "Context of the source text",
+            "type": "string"
+          },
+          "occurences": {
+            "description": "Episode or timecode by order of appearance of the source text (coma separated list)",
+            "type": "string"
+          },
+          "pivot": {
+            "type": "object",
+            "properties": {
+              "language": {
+                "description": "Source language code (IETF BCP 47)",
+                "type": "string"
+              },
+              "text": {
+                "description": "Source text to translate",
+                "type": "string"
+              },
+              "alternates": {
+                "description": "Source text alternatives",
+                "type": "string"
+              }
+            },
+            "required": [
+              "language",
+              "text"
+            ]
+          }
+        },
+        "required": [
+          "language",
+          "text"
+        ]
+      },
+      "translations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "lastUpdate": {
+              "description": "Last update timestamp (RFC 3339, section 5.6)",
+              "type": "string",
+              "format": "date-time"
+            },
+            "author": {
+              "description": "Author of the last update",
+              "type": "string"
+            },
+            "locked": {
+              "description": "Translation should not be updated if locked is true. False is assumed if not defined",
+              "type": "boolean"
+            },
+            "language": {
+              "description": "Translation language code (IETF BCP 47)",
+              "type": "string"
+            },
+            "text": {
+              "description": "Source text translation in the give language",
+              "type": "string"
+            },
+            "notes": {
+              "description": "Translation notes and context",
+              "type": "string"
+            }
+          },
+          "required": [
+            "language",
+            "text"
+          ]
+        }
+      }
+    },
+    "required": [
+      "id",
+      "category",
+      "source"
+    ]
+  }
+}

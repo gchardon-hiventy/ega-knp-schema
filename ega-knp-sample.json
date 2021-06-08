@@ -1,0 +1,42 @@
+[
+  {
+    "id": "my_company:glossaries:title:1",
+    "category": "Term",
+    "source": {
+      "lastUpdate": "2021-06-06T12:02:45+00:00",
+      "author": "",
+      "locked": true,
+      "language": "fr",
+      "text": "poisson rouge",
+      "partOfSpeech": "Noun",
+      "definition": "A small fish (not the cookie sold in the US with Goldfish brand)",
+      "field": "animal",
+      "context": "",
+      "ocurrences": "ep1",
+      "alternates": "",
+      "pivot": {
+        "language": "en",
+        "text": "goldfish",
+        "alternates": ""
+      }
+    },
+    "translations": [
+      {
+        "lastUpdate": "2021-06-07T18:05:45+00:00",
+        "author": "",
+        "locked": true,
+        "language": "it",
+        "text": "pesce rosso",
+        "note": ""
+      },
+      {
+        "lastUpdate": "2021-06-07T02:34:45+00:00",
+        "author": "",
+        "locked": true,
+        "language": "es",
+        "text": "pez de colores",
+        "note": "Don't use pez dorado"
+      }
+    ]
+  }
+]
