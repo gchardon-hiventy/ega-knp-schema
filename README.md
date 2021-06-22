@@ -8,7 +8,7 @@ a [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) app
 ## Pointers
 
 * The [JSON Schema](https://json-schema.org/)
-* A simple online [JSON Schema Validator](https://json-schema.org/)
+* A simple online [JSON Schema Validator](https://www.jsonschemavalidator.net/)
 * Language codes: [IETF BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag), also specified
   in [W3 language tags](https://www.w3.org/International/articles/language-tags/) and the
   original [BCP 47 Note](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
